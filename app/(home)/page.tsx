@@ -2,6 +2,7 @@ import FeaturedProjects from "./components/featured-projects";
 import HeroSection from "./components/hero-section";
 import OurServices from "./components/our-services";
 import SellSection from "./components/sell-section";
+import TableSection from "./components/table-section";
 import WhySection from "./components/why-section";
 
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
       <SellSection />
       <OurServices />
       <FeaturedProjects />
+      <TableSection />
     </main>
   );
 }
