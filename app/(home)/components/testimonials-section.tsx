@@ -17,34 +17,34 @@ const TestimonialsSection = () => {
       logo: GoViral,
       brand: "Go-Viral",
       customer: "Pedro Henrique",
-      desc: "Antes eu tinha que ficar horas e horas no whatsapp para fechar novos pedidos, mas isso tudo mudou quando fiz meu sistema com a Okacodes."
+      desc: '"Antes eu tinha que ficar horas e horas no whatsapp para fechar novos pedidos, mas isso tudo mudou quando fiz meu sistema com a Okacodes."'
     },
     {
       logo: ActiveTrack,
       brand: "Active Track",
       customer: "Emmanuel Augusto",
-      desc: "Profissionais com excelente criatividade, não foi necessário ajustes na ideia inicial deles! Sempre muito eficaz e disposto a entender o projeto!"
+      desc: '"Profissionais com excelente criatividade, não foi necessário ajustes na ideia inicial deles! Sempre muito eficaz e disposto a entender o projeto!"'
     },
     {
       logo: Usystem,
       brand: "Usystem",
       customer: "Raphael Martinez",
-      desc: "Excelentes profissionais, atenciosos, educados e muito bom desenvolvedor, conseguiu executar o trabalho de desenvolver um design XD em REACT com maestria, estou extremamente satisfeito e impressionado com o resultado!"
+      desc: '"Excelentes profissionais, atenciosos, educados e muito bom desenvolvedor, estou extremamente satisfeito e impressionado com o resultado!"'
     },
   ]
 
   return (
     <section className="max-w-300 w-[90%] mx-auto mt-30">
-      <h2 className="text-[2.5rem] font-bold text-center">O que dizem sobre a Okacodes?</h2>
+      <h2 className="text-2xl leading-[1.2] md:text-[2.5rem] font-bold text-center">O que dizem sobre a Okacodes?</h2>
       <div className="mt-12.5 overflow-hidden" ref={emblaRef}>
         <ul className="flex">
           {testimonialsData.map((item, i) => (
-            <li className="flex-[0_0_100%] flex justify-between items-center gap-6 px-4" key={i} >
-              <Image src={item.logo} alt={item.brand} />
+            <li className="flex-[0_0_100%] flex flex-col md:flex-row-reverse md:justify-between items-center gap-6 px-4" key={i} >
               <div className="max-w-[45ch]">
-                <h3 className="text-[2.5rem] font-bold">{item.customer}</h3>
-                <p className="mt-5 text-2xl">{item.desc}</p>
+                <h3 className="text-2xl md:text-[2.5rem] leading-[1.3] font-bold">{item.customer}</h3>
+                <p className="mt-5 md:text-2xl">{item.desc}</p>
               </div>
+              <Image src={item.logo} alt={item.brand} />
             </li>
           ))}
         </ul>
