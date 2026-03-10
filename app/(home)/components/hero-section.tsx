@@ -13,6 +13,7 @@ const HeroSection = () => {
       </div>
       <Image
         priority
+        fetchPriority="high"
         className="mt-8.75 md:mt-20"
         src={MainImage}
         alt="Site de compra de bots no celular e loja virtual de softwares desenvolvido de pela Okacodes"
