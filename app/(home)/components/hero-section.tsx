@@ -17,6 +17,7 @@ const HeroSection = () => {
         className="mt-8.75 md:mt-20"
         src={MainImage}
         alt="Site de compra de bots no celular e loja virtual de softwares desenvolvido de pela Okacodes"
+        sizes="(max-width: 48em) 90vw, 50rem"
       />
     </section>
   )

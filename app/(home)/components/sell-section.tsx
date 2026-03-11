@@ -35,7 +35,7 @@ const SellSection = () => {
         </div>
       </div>
       <div className="text-white mt-12.5 h-110 md:max-h-110 overflow-hidden lg:rounded-[1.25rem] relative after:absolute after:inset-0 after:opacity-30 after:bg-linear-to-b after:from-black after:to-[#666]/0">
-        <video className="w-full h-full object-cover object-top" playsInline autoPlay muted loop>
+        <video className="w-full h-full object-cover object-top" poster="/okacodes/poster-sem-estresse.webp" playsInline autoPlay muted loop>
           <source src="/okacodes/sem-estresse.webm" />
         </video>
         <ApprovedOrderComponent className="text-[.625rem] md:text-sm lg:text-base top-[15%] md:top-[20%] left-[55%] sm:left-[70%] md:left-[15%] [&_img]:max-w-2.75 md:[&_img]:max-w-none" />
