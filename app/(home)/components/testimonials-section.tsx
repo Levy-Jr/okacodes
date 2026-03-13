@@ -6,6 +6,7 @@ import Image from "next/image"
 import GoViral from "@/public/okacodes/go-viral.svg"
 import ActiveTrack from "@/public/okacodes/active-track.svg"
 import Usystem from "@/public/okacodes/usystem.webp"
+import AnimatedSection, { fadeUp } from "@/components/animated-section"
 
 const TestimonialsSection = () => {
   const [emblaRef] = useEmblaCarousel({ loop: true }, [
@@ -34,7 +35,7 @@ const TestimonialsSection = () => {
   ]
 
   return (
-    <section className="max-w-300 w-[90%] mx-auto mt-30">
+    <AnimatedSection as="section" variants={fadeUp} duration={0.8} className="max-w-300 w-[90%] mx-auto mt-30">
       <h2 className="text-2xl leading-[1.2] md:text-[2.5rem] font-bold text-center">O que dizem sobre a Okacodes?</h2>
       <div className="mt-12.5 overflow-hidden" ref={emblaRef}>
         <ul className="flex">
@@ -49,7 +50,7 @@ const TestimonialsSection = () => {
           ))}
         </ul>
       </div>
-    </section >
+    </AnimatedSection>
   )
 }
 

@@ -1,9 +1,13 @@
 "use client"
 
 import Image from "next/image"
-import FXSoftwares from "@/public/okacodes/fx-softwares-projetos.webp"
-import GoViral from "@/public/okacodes/go-viral-background.webp"
-import ZapBarbearia from "@/public/okacodes/zap-barbearia.webp"
+import FXSoftwares from "@/public/okacodes/projetos/fx-softwares-projetos.webp"
+import GoViral from "@/public/okacodes/projetos/go-viral-background.webp"
+import ZapBarbearia from "@/public/okacodes/projetos/zap-barbearia.webp"
+import EnoveSelect from "@/public/okacodes/projetos/enove-select.webp"
+import Marqueseleao from "@/public/okacodes/projetos/marqueseleao.webp"
+import NewWinDigital from "@/public/okacodes/projetos/new-win-digital.webp"
+import AgroCapixaba from "@/public/okacodes/projetos/agro-capixaba.webp"
 import { cn } from "@/lib/utils"
 
 const ProjectsGrid = () => {
@@ -29,8 +33,40 @@ const ProjectsGrid = () => {
       src: ZapBarbearia,
       title: "Zap Barbearia",
       category: "Landing Page",
-      desc: "Landing Page para um CRM com IA integrado com WhatsApp. Desenvolvido com NextJS + TailwindCSS",
+      desc: "Landing Page para um CRM com IA integrado com WhatsApp. Desenvolvido com NextJS + TailwindCSS.",
       href: "https://zap-barbearia.vercel.app"
+    },
+    {
+      id: "4",
+      src: EnoveSelect,
+      title: "Enove Select",
+      category: "Site institucional",
+      desc: "Projeto feito para uma imobiliária desenvolvida com NextJS.",
+      href: "https://enove-select.vercel.app/"
+    },
+    {
+      id: "5",
+      src: Marqueseleao,
+      title: "Marques e Leão",
+      category: "Site institucional",
+      desc: "Projeto para a imobiliária Marques&Leão. Desenvolvida com Next.js e Tailwind CSS, ela possui 5 páginas, incluindo filtragem de imóveis e integração com API Google Maps.",
+      href: "https://marqueseleao.com.br"
+    },
+    {
+      id: "6",
+      src: NewWinDigital,
+      title: "New Win Digital",
+      category: "Landing Page",
+      desc: "Landing Page para uma agência de marketing digital desenvolvida com NextJS.",
+      href: "https://newwindigital.com.br"
+    },
+    {
+      id: "7",
+      src: AgroCapixaba,
+      title: "Agro Capixaba",
+      category: "Site institucional",
+      desc: "Site institucional de um estúdio audiovisual desenvolvido com NextJS.",
+      href: "https://agrocapixabafilmes.com.br"
     },
   ]
 

@@ -1,6 +1,10 @@
+"use client"
+
 import Image from "next/image";
 import PositiveIcon from "@/public/okacodes/positivo.svg";
 import NegativeIcon from "@/public/okacodes/x.svg";
+import AnimatedSection, { slideLeft, staggerContainer, staggerItem } from "@/components/animated-section";
+import { motion } from "motion/react";
 
 const TableSection = () => {
   const criteriaData = [
@@ -44,12 +48,20 @@ const TableSection = () => {
 
   return (
     <section className="mt-30 max-w-300 w-[90%] mx-auto">
-      <div className="max-w-[50ch]">
-        <h2 className="font-bold text-[2.5rem] leading-[1.2]">A diferença entre profissionais e amadores</h2>
-        <p className="mt-3">Com o seu site sendo desenvolvido pela Okacodes, os sites dos seus concorrentes vão parecer que foram feitos por amadores.</p>
-      </div>
+      <AnimatedSection variants={slideLeft} duration={0.8}>
+        <div className="max-w-[50ch]">
+          <h2 className="font-bold text-[2.5rem] leading-[1.2]">A diferença entre profissionais e amadores</h2>
+          <p className="mt-3">Com o seu site sendo desenvolvido pela Okacodes, os sites dos seus concorrentes vão parecer que foram feitos por amadores.</p>
+        </div>
+      </AnimatedSection>
       <div className="overflow-hidden overflow-x-auto">
-        <table className="mt-17.5 min-w-full w-max border-collapse">
+        <motion.table
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+          className="mt-17.5 min-w-full w-max border-collapse"
+        >
           <thead>
             <tr>
               <th className="text-left text-2xl md:text-[2.5rem] font-bold pb-10 pt-4 pr-8 align-bottom">
@@ -68,7 +80,12 @@ const TableSection = () => {
           </thead>
           <tbody>
             {criteriaData.map((row, index) => (
-              <tr key={index} className="text-xs md:text-base *:max-w-[18ch]">
+              <motion.tr
+                key={index}
+                variants={staggerItem}
+                transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+                className="text-xs md:text-base *:max-w-[18ch]"
+              >
                 <td className="text-left py-5 pr-8">
                   {row.name}
                 </td>
@@ -93,10 +110,10 @@ const TableSection = () => {
                     }
                   </div>
                 </td>
-              </tr>
+              </motion.tr>
             ))}
           </tbody>
-        </table>
+        </motion.table>
       </div>
     </section>
   )

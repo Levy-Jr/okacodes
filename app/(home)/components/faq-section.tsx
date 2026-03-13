@@ -4,13 +4,15 @@ import { cn } from "@/lib/utils"
 import ArrowFaq from "@/public/okacodes/seta-faq.svg"
 import Image from "next/image"
 import { useState } from "react"
+import AnimatedSection, { fadeUp, staggerContainer, staggerItem } from "@/components/animated-section"
+import { motion } from "motion/react"
 
 const FaqSection = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null)
   const faqData = [
     {
       question: "Quanto tempo demora para o meu site ficar pronto?",
-      answer: "O prazo exato depende da complexidade do seu projeto. Uma Landing Page de alta conversão leva, em média, de 7 a 15 dias. Já um e-commerce completo ou site institucional robusto leva a partir de 20 dias. Na Okacodes, trabalhamos com cronogramas profissionais: não fazemos nada “nas coxas”, mas se prometemos uma data de entrega, seu site estará no ar exatamente naquele dia."
+      answer: "O prazo exato depende da complexidade do seu projeto. Uma Landing Page de alta conversão leva, em média, de 7 a 15 dias. Já um e-commerce completo ou site institucional robusto leva a partir de 20 dias. Na Okacodes, trabalhamos com cronogramas profissionais: não fazemos nada \u201Cnas coxas\u201D, mas se prometemos uma data de entrega, seu site estará no ar exatamente naquele dia."
     },
     {
       question: "Terei custos mensais depois que o site estiver no ar?",
@@ -32,11 +34,24 @@ const FaqSection = () => {
 
   return (
     <section className="max-w-300 w-[90%] mx-auto mt-30">
-      <h2 className="text-[2rem] md:text-5xl font-bold">Tem dúvidas sobre a gente?</h2>
-      <h3 className="text-2xl md:text-4xl text-black/75 mt-2.5">Temos as respostas!</h3>
-      <ul className="mt-12.5 md:ml-12.5">
+      <AnimatedSection variants={fadeUp}>
+        <h2 className="text-[2rem] md:text-5xl font-bold">Tem dúvidas sobre a gente?</h2>
+        <h3 className="text-2xl md:text-4xl text-black/75 mt-2.5">Temos as respostas!</h3>
+      </AnimatedSection>
+      <motion.ul
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.1 }}
+        className="mt-12.5 md:ml-12.5"
+      >
         {faqData.map((item, i) => (
-          <li className="not-first:mt-10 relative" key={i}>
+          <motion.li
+            variants={staggerItem}
+            transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+            className="not-first:mt-10 relative"
+            key={i}
+          >
             <button
               onClick={() => {
                 activeIndex === i ? setActiveIndex(null) : setActiveIndex(i)
@@ -60,9 +75,9 @@ const FaqSection = () => {
                 {item.answer}
               </p>
             </div>
-          </li>
+          </motion.li>
         ))}
-      </ul>
+      </motion.ul>
     </section >
   )
 }

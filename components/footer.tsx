@@ -41,7 +41,7 @@ const Footer = () => {
         </nav>
         <ul className="flex items-center gap-2.5">
           <li>
-            <a href="https://x.com/Okacodesdev">
+            <a rel="noopener noreferrer" target="_blank" href="https://x.com/Okacodesdev">
               <Image
                 src={TwitterIcon}
                 alt="Twitter (X)"
@@ -49,7 +49,7 @@ const Footer = () => {
             </a>
           </li>
           <li>
-            <a href="https://www.instagram.com/okacodesbrasil/">
+            <a rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/okacodesbrasil/">
               <Image
                 src={InstagramIcon}
                 alt="Instagram"
@@ -57,7 +57,7 @@ const Footer = () => {
             </a>
           </li>
           <li>
-            <a href="https://api.whatsapp.com/send?phone=5592986001909">
+            <a rel="noopener noreferrer" target="_blank" href="https://api.whatsapp.com/send?phone=5592986001909">
               <Image
                 src={WppIcon}
                 alt="WhatsApp"

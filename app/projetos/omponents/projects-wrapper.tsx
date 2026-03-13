@@ -1,9 +1,9 @@
 "use client"
 
 import Image from "next/image"
-import FXSoftwares from "@/public/okacodes/fx-softwares-projetos.webp"
-import GoViral from "@/public/okacodes/go-viral-background.webp"
-import ZapBarbearia from "@/public/okacodes/zap-barbearia.webp"
+import FXSoftwares from "@/public/okacodes/projetos/fx-softwares-projetos.webp"
+import GoViral from "@/public/okacodes/projetos/go-viral-background.webp"
+import ZapBarbearia from "@/public/okacodes/projetos/zap-barbearia.webp"
 import ProjectsArrow from "@/public/okacodes/seta-projetos.svg"
 
 const ProjectsWrapper = () => {
