@@ -12,6 +12,7 @@ import MemojiEight from "@/public/okacodes/memoji-8.svg"
 import Image from "next/image"
 import AnimatedSection, { slideLeft, slideRight } from "@/components/animated-section"
 import ButtonWhatsapp from "@/public/okacodes/button-whatsapp.svg"
+import { WhatsAppLink } from "@/components/whatsapp-link"
 
 interface MemojiItem {
   id: string;
@@ -78,9 +79,9 @@ const WhySection = () => {
           <p>Por que ter um site?</p>
           <h2 className="text-[2rem] lg:text-[2.5rem] leading-[1.1] my-2.5 font-bold">Milhões de pessoas estão comprando pela internet.</h2>
           <p className="text-sm">Enquanto você lê isso, o mundo todo está comprando online agora. Garanta sua fatia desse mercado com um site profissional feito para atrair clientes e gerar lucro real para o seu bolso.</p>
-          <a
+          <WhatsAppLink
+            phoneNumber="5592986001909"
             className="mt-2.5 group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-linear-to-b from-[#FF8D2F] to-[#D55506] py-3 px-7 font-semibold text-white shadow-[0_4px_12px_rgba(255,141,47,0.4)] transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_8px_20px_-4px_rgba(255,141,47,0.7)] active:translate-y-0 active:scale-95"
-            href="https://api.whatsapp.com/send?phone=5592986001909"
           >
             {/* Camada de brilho animado no hover */}
             <span className="absolute inset-0 -translate-x-full bg-linear-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 ease-in-out group-hover:translate-x-full"></span>
@@ -91,7 +92,7 @@ const WhySection = () => {
               alt="WhatsApp"
             />
             <span className="z-10">Fazer um orçamento</span>
-          </a>
+          </WhatsAppLink>
         </AnimatedSection>
       </div>
       <AnimatedSection

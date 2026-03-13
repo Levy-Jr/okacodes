@@ -8,6 +8,7 @@ import Link from "next/link"
 import AnimatedSection, { fadeUp, scaleUp } from "@/components/animated-section"
 import ButtonWhatsapp from "@/public/okacodes/button-whatsapp.svg"
 import { motion } from "motion/react"
+import { WhatsAppLink } from "@/components/whatsapp-link"
 
 const ApprovedOrderComponent = ({ className, index = 0 }: { className?: string, index?: number }) => {
   return (
@@ -46,9 +47,9 @@ const SellSection = () => {
         <p className="text-xs sm:text-base mb-3.75">Com um site você poderá vender 24h por dia, conseguindo até mesmo fazer vendas enquanto dorme, tudo no piloto automático.</p>
         <div className="flex items-center justify-center gap-1 md:gap-4 text-xs sm:text-base">
           {/* Botão Primário: Foco total na conversão (WhatsApp) */}
-          <a
+          <WhatsAppLink
+            phoneNumber="5592986001909"
             className="group relative inline-flex items-center justify-center gap-1 md:gap-2 overflow-hidden rounded-[.625rem] bg-linear-to-b from-[#FF8D2F] to-[#D55506] py-2.5 md:py-3 px-3.5 md:px-7 font-semibold text-white shadow-[0_4px_12px_rgba(255,141,47,0.4)] transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_8px_20px_-4px_rgba(255,141,47,0.7)] active:translate-y-0 active:scale-95"
-            href="https://api.whatsapp.com/send?phone=5592986001909"
           >
             <span className="absolute inset-0 -translate-x-full bg-linear-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 ease-in-out group-hover:translate-x-full"></span>
             <Image
@@ -57,7 +58,7 @@ const SellSection = () => {
               alt="Botão do WhatsApp"
             />
             <span className="z-10">Falar com especialistas</span>
-          </a>
+          </WhatsAppLink>
 
           {/* Botão Secundário: Sem sombra estática, sem competir com o principal */}
           <Link

@@ -5,6 +5,7 @@ import Link from "next/link"
 import MainImage from "@/public/okacodes/main-image.webp"
 import { motion, type Variants } from "motion/react"
 import ButtonWhatsapp from "@/public/okacodes/button-whatsapp.svg"
+import { WhatsAppLink } from "@/components/whatsapp-link"
 
 const heroVariants: Variants = {
   hidden: {},
@@ -56,9 +57,9 @@ const HeroSection = () => {
         variants={itemVariants}
         className="text-sm md:text-base flex justify-center items-center gap-1 md:gap-2.5"
       >
-        <a
+        <WhatsAppLink
+          phoneNumber="5592986001909"
           className="group relative inline-flex items-center justify-center gap-1 md:gap-2 overflow-hidden rounded-full bg-linear-to-b from-[#FF8D2F] to-[#D55506] py-2.5 md:py-3 px-5 md:px-7 font-semibold text-white shadow-[0_4px_12px_rgba(255,141,47,0.4)] transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_8px_20px_-4px_rgba(255,141,47,0.7)] active:translate-y-0 active:scale-95"
-          href="https://api.whatsapp.com/send?phone=5592986001909"
         >
           {/* Camada de brilho animado no hover */}
           <span className="absolute inset-0 -translate-x-full bg-linear-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 ease-in-out group-hover:translate-x-full"></span>
@@ -70,7 +71,7 @@ const HeroSection = () => {
             alt="Botão do WhatsApp"
           />
           <span className="z-10">Fazer um orçamento</span>
-        </a>
+        </WhatsAppLink>
         <Link
           className="inline-block rounded-full border border-[#FF8D2F] py-2.5 px-5 text-[#FF8D2F] transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-[#FF8D2F]/10 hover:shadow-[0_8px_16px_-6px_rgba(255,141,47,0.4)] active:translate-y-0 active:scale-95"
           href="/projetos"

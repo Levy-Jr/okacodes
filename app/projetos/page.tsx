@@ -4,6 +4,7 @@ import Link from "next/link"
 import ProjectsWrapper from "./omponents/projects-wrapper"
 import { useState } from "react"
 import ProjectsGrid from "./omponents/projects-grid"
+import { PageTracker } from "@/lib/page-tracker"
 
 const ProjetosPage = () => {
   const [showMoreProjects, setShowMoreProjects] = useState(false)
@@ -11,6 +12,7 @@ const ProjetosPage = () => {
   return (
     <main className="max-w-300 w-[90%] mx-auto mt-10">
       <h1 className="text-2xl md:text-5xl max-w-[25ch] mx-auto font-bold text-center mb-12.5">Histórias de sucesso que ajudamos a construir.</h1>
+      <PageTracker eventName="ViewContent" contentName="Pagina_Projetos" />
       {showMoreProjects ?
         <ProjectsGrid />
         :
