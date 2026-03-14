@@ -18,13 +18,13 @@ const TestimonialsSection = () => {
       logo: GoViral,
       brand: "Go-Viral",
       customer: "Pedro Henrique",
-      desc: '"Antes eu tinha que ficar horas e horas no whatsapp para fechar novos pedidos, mas isso tudo mudou quando fiz meu sistema com a Okacodes."'
+      desc: '"Antes eu tinha que ficar horas e horas no WhatsApp para fechar novos pedidos, mas isso tudo mudou quando fiz meu sistema com a Okacodes."'
     },
     {
       logo: ActiveTrack,
       brand: "Active Track",
       customer: "Emmanuel Augusto",
-      desc: '"Profissionais com excelente criatividade, não foi necessário ajustes na ideia inicial deles! Sempre muito eficaz e disposto a entender o projeto!"'
+      desc: '"Profissionais com excelente criatividade, não foi necessário ajustes na ideia inicial deles! Sempre muito eficazes e dispostos a entender o projeto!"'
     },
     {
       logo: Usystem,
@@ -45,7 +45,7 @@ const TestimonialsSection = () => {
                 <h3 className="text-2xl md:text-[2.5rem] leading-[1.3] font-bold">{item.customer}</h3>
                 <p className="mt-5 md:text-2xl">{item.desc}</p>
               </div>
-              <Image src={item.logo} alt={item.brand} />
+              <Image src={item.logo} alt={`Logo da ${item.brand}`} sizes="(max-width: 48em) 8rem, 12rem" />
             </li>
           ))}
         </ul>

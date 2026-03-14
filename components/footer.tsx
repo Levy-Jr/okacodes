@@ -24,13 +24,13 @@ const Footer = () => {
   return (
     <footer className="max-w-300 w-[90%] mx-auto border-t border-t-black/10 mt-30 mb-13.25">
       <div className="mt-11 mb-10 md:mb-13.5 flex flex-col md:flex-row items-center justify-between gap-10 md:gap-5">
-        <Link href={""}>
+        <Link href="/" aria-label="Ir para a página inicial">
           <Image
             src={OkacodesLogo}
             alt="Logo da Okacodes"
           />
         </Link>
-        <nav className="mx-auto" arial-label="Footer navigation">
+        <nav className="mx-auto" aria-label="Navegação do rodapé">
           <ul className="text-xs md:text-base flex items-center gap-7.5">
             {navLinks.map((navLink, i) => (
               <li key={i}>

@@ -1,5 +1,3 @@
-"use client"
-
 import Image from "next/image"
 import OkacodesMockup from "@/public/okacodes/sobre-nos.webp"
 import AnimatedSection, { slideLeft, slideRight } from "@/components/animated-section"
@@ -17,6 +15,8 @@ const AboutUsSection = () => {
         <Image
           src={OkacodesMockup}
           alt="Mockup do site da Okacodes em um monitor"
+          loading="lazy"
+          sizes="(max-width: 48em) 90vw, 75rem"
         />
       </AnimatedSection>
     </section>

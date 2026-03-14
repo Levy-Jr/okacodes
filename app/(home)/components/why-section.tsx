@@ -1,5 +1,3 @@
-"use client"
-
 import { cn } from "@/lib/utils"
 import MemojiOne from "@/public/okacodes/memoji-1.svg"
 import MemojiTwo from "@/public/okacodes/memoji-2.svg"
@@ -60,7 +58,10 @@ const WhySection = () => {
               className="w-full pb-3"
               key={`${item.id}-${index}`}
               src={item.src}
-              alt={"Memoji dentro de um card"}
+              alt="Memoji dentro de um card"
+              width={154}
+              height={154}
+              sizes="9.625rem"
             />
           ))}
         </div>

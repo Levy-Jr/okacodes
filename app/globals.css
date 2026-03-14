@@ -64,3 +64,39 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* ─── Hero CSS Animations (JS-free for instant LCP) ─────────────── */
+
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(1.875rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroImageReveal {
+  from {
+    opacity: 0;
+    transform: translateY(1.875rem) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.hero-animate {
+  animation: heroFadeUp 0.7s cubic-bezier(0.25, 0.1, 0.25, 1) both;
+}
+
+.hero-animate-delay-1 { animation-delay: 0.1s; }
+.hero-animate-delay-2 { animation-delay: 0.25s; }
+.hero-animate-delay-3 { animation-delay: 0.4s; }
+
+.hero-image-animate {
+  animation: heroImageReveal 0.9s cubic-bezier(0.25, 0.1, 0.25, 1) 0.5s both;
+}

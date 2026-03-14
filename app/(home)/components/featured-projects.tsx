@@ -33,6 +33,7 @@ const FeaturedProjects = () => {
                 className="max-w-50 sm:max-w-55 lg:max-w-none"
                 src={Fxsoftwares}
                 alt="Mockup de um notebook com o site da FxSoftwares"
+                sizes="(max-width: 40em) 12.5rem, (max-width: 64em) 13.75rem, 25rem"
               />
             </figure>
             <div className="flex flex-col items-center justify-center relative bg-black/50 backdrop-blur-lg">
@@ -40,10 +41,14 @@ const FeaturedProjects = () => {
                 <h3 className="text-sm sm:text-xl lg:text-2xl font-semibold">Fx Softwares</h3>
                 <p className="mt-1.25 mb-3.5 md:my-2.5 text-white/75 text-[.625rem] sm:text-sm md:text-lg leading-[1.3]">Um e-commerce de alta performance desenvolvido com NextJS + WooCommerce como CMS headless, com foco em desempenho e conversão de vendas.</p>
                 <a
-                  className="bg-[#0057CF] text-white text-xs sm:text-base font-semibold inline-block rounded-[100vmax] py-2.5 text-center w-full transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_8px_20px_-4px_rgba(0,87,207,0.6)] hover:brightness-110 active:translate-y-0 active:scale-95"
-                  href={""}
+                  className="group relative overflow-hidden bg-linear-to-b from-[#1A56EB] to-[#004bb5] text-white text-xs sm:text-base font-semibold inline-block rounded-[100vmax] py-2.5 text-center w-full transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_8px_20px_-4px_rgba(0,87,207,0.6)] hover:brightness-110 active:translate-y-0 active:scale-95"
+                  href="https://fxsoftwares.com.br"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Ver projeto Fx Softwares"
                 >
-                  Ver projeto
+                  <span className="absolute inset-0 -translate-x-full bg-linear-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 ease-in-out group-hover:translate-x-full"></span>
+                  <span className="relative z-10">Ver projeto</span>
                 </a>
               </div>
             </div>
@@ -59,6 +64,7 @@ const FeaturedProjects = () => {
                 className="max-w-50 sm:max-w-55 lg:max-w-none absolute right-1/2 translate-x-1/2"
                 src={GoViral}
                 alt="Mockup de um celular no site da GoViral"
+                sizes="(max-width: 40em) 12.5rem, (max-width: 64em) 13.75rem, 25rem"
               />
             </figure>
             <div className="z-20 flex flex-col items-center justify-center relative bg-black/50 backdrop-blur-lg">
@@ -66,10 +72,14 @@ const FeaturedProjects = () => {
                 <h3 className="text-sm sm:text-xl lg:text-2xl font-semibold">Go Viral</h3>
                 <p className="mt-1.25 mb-3.5 md:my-2.5 text-white/75 text-[.625rem] sm:text-sm md:text-lg leading-[1.3]">Projeto desenvolvido com NextJS para ajudar seu vídeo a viralizar no Tiktok e Instagram. É um site de compra de visualizações.</p>
                 <a
-                  className="bg-[#F54D4D] text-white text-xs sm:text-base font-semibold inline-block rounded-[100vmax] py-2.5 text-center w-full transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_8px_20px_-4px_rgba(245,77,77,0.6)] hover:brightness-110 active:translate-y-0 active:scale-95"
-                  href={""}
+                  className="group relative overflow-hidden bg-linear-to-b from-[#ff6b6b] to-[#c92a2a] text-white text-xs sm:text-base font-semibold inline-block rounded-[100vmax] py-2.5 text-center w-full transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_8px_20px_-4px_rgba(245,77,77,0.6)] hover:brightness-110 active:translate-y-0 active:scale-95"
+                  href="https://viralizaaigo.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Ver projeto Go Viral"
                 >
-                  Ver projeto
+                  <span className="absolute inset-0 -translate-x-full bg-linear-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 ease-in-out group-hover:translate-x-full"></span>
+                  <span className="relative z-10">Ver projeto</span>
                 </a>
               </div>
             </div>

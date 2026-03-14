@@ -43,13 +43,14 @@ const Header = () => {
   return (
     <header className="max-w-300 w-[90%] mx-auto py-3 flex justify-between items-center">
       <div className="flex-1 flex justify-start">
-        <Image
-          className="relative z-51"
-          src={OkacodesLogo}
-          alt="Logo da Okacodes"
-        />
+        <Link href="/" className="relative z-51">
+          <Image
+            src={OkacodesLogo}
+            alt="Logo da Okacodes"
+          />
+        </Link>
       </div>
-      <nav className={cn("text-sm hidden md:block", isNavOpen && "font-bold text-[2.5rem] text-black absolute z-50 grid pr-[10%] items-center inset-0 text-end bg-white/50 backdrop-blur-3xl")} arial-label="Main navigation">
+      <nav className={cn("text-sm hidden md:block", isNavOpen && "font-bold text-[2.5rem] text-black absolute z-50 grid pr-[10%] items-center inset-0 text-end bg-white/50 backdrop-blur-3xl")} aria-label="Navegação principal">
         <ul className="relative z-10 flex flex-col md:flex-row gap-10 md:gap-7.5">
           {navLinks.map((navLink, i) => (
             <li key={i}>

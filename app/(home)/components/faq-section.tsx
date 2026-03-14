@@ -1,14 +1,7 @@
-"use client"
-
-import { cn } from "@/lib/utils"
-import ArrowFaq from "@/public/okacodes/seta-faq.svg"
-import Image from "next/image"
-import { useState } from "react"
-import AnimatedSection, { fadeUp, staggerContainer, staggerItem } from "@/components/animated-section"
-import { motion } from "motion/react"
+import AnimatedSection, { fadeUp } from "@/components/animated-section"
+import FaqList from "./faq-list"
 
 const FaqSection = () => {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null)
   const faqData = [
     {
       question: "Quanto tempo demora para o meu site ficar pronto?",
@@ -38,46 +31,7 @@ const FaqSection = () => {
         <h2 className="text-[2rem] md:text-5xl font-bold">Tem dúvidas sobre a gente?</h2>
         <h3 className="text-2xl md:text-4xl text-black/75 mt-2.5">Temos as respostas!</h3>
       </AnimatedSection>
-      <motion.ul
-        variants={staggerContainer}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.1 }}
-        className="mt-12.5 md:ml-12.5"
-      >
-        {faqData.map((item, i) => (
-          <motion.li
-            variants={staggerItem}
-            transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
-            className="not-first:mt-10 relative"
-            key={i}
-          >
-            <button
-              onClick={() => {
-                activeIndex === i ? setActiveIndex(null) : setActiveIndex(i)
-              }}
-              className="text-start cursor-pointer mb-2.5 text-2xl md:text-[1.75rem] font-medium flex items-start md:items-center gap-2.5"
-            >
-              <Image
-                className={cn("transition-transform duration-300 mt-1.5 md:mt-0", activeIndex === i && "rotate-180")}
-                src={ArrowFaq}
-                alt="Seta para expansão"
-              />
-              <h4>{item.question}</h4>
-            </button>
-            <div
-              className={cn(
-                "ml-8.5 grid transition-all duration-300 ease-in-out overflow-hidden",
-                activeIndex === i ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
-              )}
-            >
-              <p className="overflow-hidden text-xl md:text-2xl leading-[1.3] text-black/75">
-                {item.answer}
-              </p>
-            </div>
-          </motion.li>
-        ))}
-      </motion.ul>
+      <FaqList />
     </section >
   )
 }
