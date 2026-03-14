@@ -1,6 +1,6 @@
 "use client"
 
-import { useRef } from "react"
+import { useRef, useEffect, useState } from "react"
 import { useScroll, useTransform, motion, MotionValue, useSpring } from "motion/react"
 import Image, { StaticImageData } from "next/image"
 import ProjectsArrow from "@/public/okacodes/seta-projetos.svg"
@@ -20,42 +20,43 @@ type ProjectCardProps = {
 
 export default function AnimatedProjectCard({ project, i, progress, range, targetScale }: ProjectCardProps) {
   const containerRef = useRef<HTMLDivElement>(null)
+  const [isMobile, setIsMobile] = useState(false)
 
-  // Add spring physics to make the scroll animation buttery smooth
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768)
+    check()
+    window.addEventListener("resize", check)
+    return () => window.removeEventListener("resize", check)
+  }, [])
+
+  // Spring physics for buttery smooth scroll-following
   const smoothProgress = useSpring(progress, {
     stiffness: 100,
     damping: 30,
     restDelta: 0.001
   })
 
-  // Scale down the card behind as the user scrolls past it
-  // First card scales down when moving away, others scale down to make room
+  // Scale down the card as the user scrolls past it
   const scale = useTransform(smoothProgress, range, [1, targetScale])
 
-  // Parallax effect for the image inside the card
+  // Parallax image zoom — only on desktop for performance
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start end", "start start"]
   })
-
-  const smoothImageProgress = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001
-  })
-  const imageScale = useTransform(smoothImageProgress, [0, 1], [1.2, 1])
+  const imageScale = useTransform(scrollYProgress, [0, 1], isMobile ? [1, 1] : [1.2, 1])
 
   return (
     <div
       ref={containerRef}
-      className="w-full h-[55vh] md:h-screen flex items-center justify-center sticky top-[15vh] md:top-5"
+      className="w-full mb-8 md:mb-0 md:h-screen flex md:items-center md:justify-center md:sticky md:top-5"
     >
       <motion.div
-        style={{ scale, top: i === 0 ? "0" : `calc(-2rem + ${i * 1.5}rem)` }}
+        style={isMobile ? {} : { scale, top: i === 0 ? "0" : `calc(-2rem + ${i * 1.5}rem)`, willChange: "transform" }}
         className="relative flex flex-col items-center w-full"
       >
         <article className="relative w-full aspect-1200/644 rounded-2xl md:rounded-4xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
-          <motion.div style={{ scale: imageScale }} className="w-full h-full">
+          <motion.div style={{ scale: imageScale, willChange: "transform" }} className="w-full h-full">
             <Image
               fill
               src={project.src}
@@ -83,3 +84,5 @@ export default function AnimatedProjectCard({ project, i, progress, range, targe
     </div>
   )
 }
+
+
