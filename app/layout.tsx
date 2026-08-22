@@ -5,7 +5,7 @@ import Header from "@/components/header";
 import Footer from "@/components/footer";
 import Script from "next/script";
 
-const BASE_URL = 'https://okacodes.com.br'
+const BASE_URL = 'https://okacodes.com'
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),

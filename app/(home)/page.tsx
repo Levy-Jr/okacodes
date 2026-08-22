@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title: "Sites Profissionais para Empresas — Feitos com Código Sob Medida",
   description: "Transforme seu negócio com um site profissional feito sob medida. Landing Pages, E-commerces e Sites Institucionais de alta performance que vendem 24h por dia. Fale com nossos especialistas.",
   alternates: {
-    canonical: "https://okacodes.com.br",
+    canonical: "https://okacodes.com",
   },
 }
 

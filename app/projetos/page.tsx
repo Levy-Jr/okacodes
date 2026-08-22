@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: "Projetos",
   description: "Conheça os projetos desenvolvidos pela Okacodes. E-commerces, Landing Pages e Sites Institucionais de alta performance para empresas reais.",
   alternates: {
-    canonical: "https://okacodes.com.br/projetos",
+    canonical: "https://okacodes.com/projetos",
   },
 }
 

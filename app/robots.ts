@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '/blog',
     },
-    sitemap: 'https://okacodes.com.br/sitemap.xml',
+    sitemap: 'https://okacodes.com/sitemap.xml',
   }
 }

@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next'
 
-const BASE_URL = 'https://okacodes.com.br'
+const BASE_URL = 'https://okacodes.com'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
